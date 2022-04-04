@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing:border-box;
+} 
+.header
+{
+	height: 20px;
+    width: 100%;
+    background-color:black;
+    background-attachment: fixed;
+
+}
+
+.navbar-style
+{
+	box-shadow: none;
+}
+.logo
+{
+	text-align:  center;
+	color: orangered;
+	height: 48px;
+	padding-left: 20px;
+	margin-top: 5px;
+}
+.icon-bar
+{
+	background: darkorange;
+}
+
+.bigimg
+{
+	background-image: url('images/slider1.jpg');
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	width: 100%;
+	height: 600px;
+}
+.info
+{
+	margin-left: 150px;
+}
+
+body
+{
+	font-family: montserrat;
+}
+nav
+{
+	background:   faint-grey;
+	height: 100px;
+	width: 100%;
+}
+label.logo
+{
+	color: orange;
+	font-size: 25px;
+	line-height: 30px;
+    font-weight: bold;
+	padding-top: 20px;
+	padding-left: 150px;
+}
+nav ul
+{
+	float: right;
+	margin-right: 20px;
+	padding-top: 30px;
+}
+nav ul li
+{
+	display: inline-block;
+	line-height: 50px;
+	margin: 0 20px;
+}
+nav ul li a
+{
+	color:orange;
+	font-size: 17px;
+	padding: 7px 13px;
+	border-radius: 3px;
+}
+a.active,a:hover
+{
+	background:#1b9ff;
+	transition: .5s;
+
+}
+.checkbtn
+{
+	font-size: 30px;
+	color: orange;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+}
+
+//slider
+/*! http://responsiveslides.com v1.53 by @viljamis */
+
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+ 	display: block;
+	height: auto;
+	float: left;
+	border: 0;
+	width: 100%;
+	border-top: 10px solid #454545;
+  }
+
+//lightbox
+#jquery-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 90;
+	width: 100%;
+	height: 500px;
+}
+#jquery-lightbox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	text-align: center;
+	line-height: 0;
+}
+#lightbox-image img{
+	width:100%;
+}
+#jquery-lightbox a img { border: none; }
+#lightbox-container-image-box {
+	position: relative;
+	background-color: #fff;
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+}
+#lightbox-container-image { padding: 10px; }
+#lightbox-loading {
+	position: absolute;
+	top: 40%;
+	left: 0%;
+	height: 25%;
+	width: 100%;
+	text-align: center;
+	line-height: 0;
+}
+#lightbox-nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+}
+#lightbox-container-image-box > #lightbox-nav { left: 0; }
+#lightbox-nav a { outline: none;}
+#lightbox-nav-btnPrev, #lightbox-nav-btnNext {
+	width: 49%;
+	height: 100%;
+	zoom: 1;
+	display: block;
+}
+#lightbox-nav-btnPrev { 
+	left: 0; 
+	float: left;
+}
+#lightbox-nav-btnNext { 
+	right: 0; 
+	float: right;
+}
+#lightbox-container-image-data-box {
+	font: 10px Verdana, Helvetica, sans-serif;
+	background-color: #fff;
+	margin: 0 auto;
+	line-height: 1.4em;
+	overflow: auto;
+	width: 100%;
+	padding: 0 10px 0;
+}
+#lightbox-container-image-data {
+	padding: 0 10px; 
+	color: #666; 
+}
+#lightbox-container-image-data #lightbox-image-details { 
+	width: 70%; 
+	float: left; 
+	text-align: left; 
+}	
+#lightbox-image-details-caption { font-weight: bold; }
+#lightbox-image-details-currentNumber {
+	display: block; 
+	clear: left; 
+	padding-bottom: 1.0em;	
+}			
+#lightbox-secNav-btnClose {
+	width: 66px; 
+	float: right;
+	padding-bottom: 0.7em;	
+}

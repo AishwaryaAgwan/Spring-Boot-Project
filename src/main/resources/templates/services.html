@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title>Hotel Reservation Application</title>
+<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+    <link rel="stylesheet" type="text/css" href="css/hotel.css">
+     <link rel="stylesheet" type="text/css" href="css/lightbox.css">
+     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/responsiveslides.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/responsiveslides.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" type="static/text/css" href="css/bootstrap-reboot.css">
+  <link rel="stylesheet" type="static/text/css" href="css/bootstrap-reboot.min.css">
+  <script type="text/javascript" src="js/bootstrap.bundle.js"> </script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+  <script type="text/javascript" src="js/bootstrap.js"> </script>
+  <script type="text/javascript" src="js/bootstrap.min.js"> </script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="assets/css/A.bootstrap.min.css+template.css+fa.min.css+gfonts.min.css,Mcc.LI5f1xXhbm.css.pagespeed.cf.G00NPyYGCq.css" rel="stylesheet" media="screen" />
+ 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+<script>if ( top !== self ) top.location.replace( self.location.href );// Hey, don't iframe my iframe!</script>
+ 
+</head>
+
+<div th:replace="fragments :: menu"></div>
+
+<body>
+  
+		
+			 <div th:switch="${services}"class="content">
+				<div class="services">
+						<div class="service-content">
+							<h3>Our Hotel Services</h3>
+							<ul>
+								<li><span>1.</span></li>
+								<li><p><a href="#">CULTURE SHOW</a> Every Evening We . . . . .</p></li>
+								<div class="clear"> </div>
+							</ul>
+							<ul>
+								<li><span>2.</span></li>
+								<li><p><a href="#">SWIMMING POOL</a> You can enjoy Swimming in the pool and relax with a drink. . .. . .  </p></li>
+								<div class="clear"> </div>
+							</ul>
+							<ul>
+								<li><span>3.</span></li>
+								<li><p><a href="#">RESTAURANT</a> You can have . . . </p></li>
+								<div class="clear"> </div>
+							</ul>
+							<ul>
+								<li><span>4.</span></li>
+								<li><p><a href="#">CONFERENCE HALL</a>Here You . . . .</p></li>
+								<div class="clear"> </div>
+							</ul>
+							<ul>
+								<li><span>5.</span></li>
+								<li><p><a href="#">SPA</a>Here . . . .</p></li>
+								<div class="clear"> </div>
+							</ul>
+							<ul>
+								<li><span>6.</span></li>
+								<li><p><a href="#">POOLSIDE BAR</a> To chill. . .. . </p></li>
+								<div class="clear"> </div>
+							</ul>
+						</div>
+						<div class="services-sidebar">
+							<h3>WE PROVIDE</h3>
+							 <ul>
+							  	<li><a href="#">other facility</a></li>
+							  	<li><a href="#">other facility</a></li>
+							  	<li><a href="#">other facility</a></li>
+							  	<li><a href="#">other facility</a></li>
+							  	<li><a href="#">other facility</a></li>
+								<li><a href="#">BROUGHT TO YOU BY CODE-PROJECTS</a></li>
+								
+	                            
+							  	<li><a href="#">other facility</a></li>
+					 		 </ul>
+					 		 
+						</div>
+						<div class="clear"> </div>
+					</div>
+			</div>
+	</body>
+	<div th:replace="fragments :: pageFooter"></div>
+</html>
+
+
+
+
+

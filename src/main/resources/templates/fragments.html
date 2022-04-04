@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+
+<head th:fragment="pageHeader">
+
+<meta charset="ISO-8859-1">
+<title>Hotel Reservation Application</title>
+
+    
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" type="static/text/css" href="css/bootstrap-reboot.css">
+  <link rel="stylesheet" type="static/text/css" href="css/bootstrap-reboot.min.css">
+  <script type="text/javascript" src="js/bootstrap.bundle.js"> </script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+  <script type="text/javascript" src="js/bootstrap.js"> </script>
+  <script type="text/javascript" src="js/bootstrap.min.js"> </script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="assets/css/A.bootstrap.min.css+template.css+fa.min.css+gfonts.min.css,Mcc.LI5f1xXhbm.css.pagespeed.cf.G00NPyYGCq.css" rel="stylesheet" media="screen" />
+ 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  
+</head>
+<body>
+
+<div th:fragment="menu">
+
+<div class="header"  style="height: 200px; width: 100%; background:faintgrey;">
+	
+    
+    <div class="logo" style="height:130px; width:100%;">
+    <a class="navbar-brand" style="height:60px; width:130px;margin-top: 10px;"><img src="Images/logo2.png" ></a>
+    </div>    
+        
+   <div class="nav" style="height:70px; width:100%; background-color:black; background-attachment: fixed;">
+    		<ul class="nav navbar-left" style="height:70px; width:70%;">
+	  <li class="active" style="float: left"><a th:href = "@{/}" class=" nav-link btn btn-md mb-3 " style=" display: block;
+  color: orange;
+  text-align: center;">Home</a></li>
+  
+     <li class="nav-item" style="float: left;"><a  th:href = "@{/registration}" class=" nav-link btn btn-md mb-3" style=" display: block;
+  color: orange; 
+  text-align: center;" > Add User </a></li>
+  
+      <li class="nav-item" style="float: left;"><a  th:href = "@{/getUsers}" class=" nav-link btn btn-md mb-3" style=" display: block;
+  color: orange;
+  text-align: center; ">User list</a></li>
+  
+      <li class="nav-item" style="float: left;"><a  th:href = "@{/hotelRegister}" class=" nav-link btn btn-md mb-3" style=" display: block;
+  color: orange; 
+  text-align: center;" > Add Hotel </a></li>
+  
+      <li class="nav-item" style="float: left;"><a  th:href = "@{/getHotels}" class=" nav-link btn btn-md mb-3" style=" display: block;
+  color: orange;
+  text-align: center; ">Hotel list</a></li>
+  
+  <li class="nav-item" style="float: left;"><a th:href = "@{/getGallery}" class=" nav-link btn btn-md mb-3" style=" display: block;
+  color: orange;
+  text-align: center; ">Gallery</a></li>
+  
+  <li class="nav-item" style="float: left;"><a  th:href = "@{/getAbout}" class=" nav-link btn btn-md mb-3" style=" display: block;
+  color: orange;
+  text-align: center; ">About</a></li>
+  
+      
+</ul>
+
+<ul class="nav navbar-right" style="height:70px; width:30%;">
+       <li style="float: left;">
+      <form class="form-inline my-2 my-lg-0" style=" display: block; color: orange; text-align: center; ">
+      <input class="form-control mr-sm-2" type="search" placeholder="Looking for" aria-label="Search">
+      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      </li>
+        <li style="margin-left:40px;"><a href="#" th:href="@{/login}"  style=" display: block; color: orange; text-align: center;"><span class="glyphicon glyphicon-log-in"></span><button class="w3-button w3-black w3-round-large"><i class="fa fa-sign-in" style="font-size:20px">Login</i></button></a></li>
+        <li  style="margin-left:10px;"><a href="#" th:href="@{/logout}"  style=" display: block; color: orange; text-align: center;"><span class="glyphicon glyphicon-log-out"></span><button class="w3-button w3-black w3-round-large"><i class="fa fa-sign-out" style="font-size:20px">Logout</i></button></a></li>
+</ul>  
+    
+</div>
+</div>
+
+
+</div>
+
+
+<footer class="container-fluid text-center" th:fragment="pageFooter">
+<div class="copy-tight" style="text-align: center;
+	padding: 0px 0px 0.6em 0;">
+			<p style="font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 1.3em;
+	font-weight: 400;
+	color: #3B3B3B;
+	text-transform: uppercase;">copy HOTEL,Shirdi 20222 "THIS PROJECT IS FOR <a href="http://www.code-projects.org/" style="color: #b36b00;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;">BOOK-HOTELS"</a></p>
+		</div>
+
+</footer>
+
+</body>
+</html>

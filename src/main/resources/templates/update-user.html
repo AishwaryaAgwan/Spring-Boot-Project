@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title>Hotel Reservation Application</title>
+<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+    <link rel="stylesheet" type="text/css" href="css/hotel.css">
+     <link rel="stylesheet" type="text/css" href="css/lightbox.css">
+     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/responsiveslides.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/responsiveslides.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" type="static/text/css" href="css/bootstrap-reboot.css">
+  <link rel="stylesheet" type="static/text/css" href="css/bootstrap-reboot.min.css">
+  <script type="text/javascript" src="js/bootstrap.bundle.js"> </script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"> </script>
+  <script type="text/javascript" src="js/bootstrap.js"> </script>
+  <script type="text/javascript" src="js/bootstrap.min.js"> </script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="assets/css/A.bootstrap.min.css+template.css+fa.min.css+gfonts.min.css,Mcc.LI5f1xXhbm.css.pagespeed.cf.G00NPyYGCq.css" rel="stylesheet" media="screen" />
+ 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+<script>if ( top !== self ) top.location.replace( self.location.href );// Hey, don't iframe my iframe!</script>
+ 
+</head>
+
+<div th:replace="fragments :: menu"></div>
+
+<body>
+<h1>Update Customer Details</h1>
+<form th:action="@{/updateUsers}" th:object="${user}" method="post">
+     <div class="form-group">
+       <input type="hidden" th:field="*{id}"/>
+         <label for="firstName">First Name</label>
+        <input class="form-control" type="text" th:field="*{firstName}" id="firstName" >
+       
+    </div>
+     <div class="form-group">
+         <label for="lastName">Last Name</label>
+        <input class="form-control" type="text" th:field="*{lastName}" id="lastName" >
+       
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" type="text" th:field="*{email}" id="email" >
+       
+    </div>
+    
+    <input type="submit"  class="btn btn-warning mb-3" value="Update User">
+    <a  th:href = "@{/getUsers}" class=" btn btn-primary btn-md mb-3 float-right"> Customer List</a></li><br><br>
+</form>
+</body>
+<div th:replace="fragments :: pageFooter"></div>
+</html>
