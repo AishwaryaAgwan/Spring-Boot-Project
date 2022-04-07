@@ -1,15 +1,10 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-
-	<head>
-		<title>Hotel Reservation Application</title>
-<link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Hotel Reservation Application</title>
     <link rel="stylesheet" type="text/css" href="css/hotel.css">
-     <link rel="stylesheet" type="text/css" href="css/lightbox.css">
-     <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/responsiveslides.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="js/responsiveslides.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="css/style.css">
    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
@@ -31,14 +26,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   
 <script>if ( top !== self ) top.location.replace( self.location.href );// Hey, don't iframe my iframe!</script>
- 
+  
+  <link th:href="@{/css/main.css}" rel="stylesheet">
+<link th:href="@{/js/main.js}" rel="stylesheet">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <script>
+            // "$(window).load(function() {"
+                $(function () {
+            
+                  // Slideshow 1
+                  $("#slider1").responsiveSlides({
+                    maxwidth: 1600,
+                    speed: 600
+                  });
+            });
+  </script>
 </head>
 
 <div th:replace="fragments :: menu"></div>
 
 <body>
-<h1>Update Customer Details</h1>
-<form th:action="@{/updateUsers}" th:object="${user}" method="post">
+  
+  
+<div class="container" style="height:1000px;">
+<h1  style="color:orange; margin-top:20px;">Update User Details</h1>
+
+<form th:action="@{/saveUser}" th:object="${user}" method="post">
      <div class="form-group">
        <input type="hidden" th:field="*{id}"/>
          <label for="firstName">First Name</label>
@@ -55,10 +68,23 @@
         <input class="form-control" type="text" th:field="*{email}" id="email" >
        
     </div>
+    <div class="form-group">
+        <label for="contactNo">Contact No</label>
+        <input class="form-control" type="text" th:field="*{contactNo}" id="contactNo" >
+       
+    </div>
     
-    <input type="submit"  class="btn btn-warning mb-3" value="Update User">
-    <a  th:href = "@{/getUsers}" class=" btn btn-primary btn-md mb-3 float-right"> Customer List</a></li><br><br>
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input class="form-control" type="text" th:field="*{address}" id="address" >
+       
+    </div>
+    
+    
+    <input type="submit"  class="btn btn-secondary mb-3" value="Update User">
+    <a  th:href = "@{/getUsers}" class=" btn btn-secondary btn-md mb-3">User List</a><br><br>
 </form>
+</div>
 </body>
 <div th:replace="fragments :: pageFooter"></div>
 </html>

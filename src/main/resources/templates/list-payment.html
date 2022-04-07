@@ -24,6 +24,9 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+<script>if ( top !== self ) top.location.replace( self.location.href );// Hey, don't iframe my iframe!</script>
+  
   <link th:href="@{/css/main.css}" rel="stylesheet">
 <link th:href="@{/js/main.js}" rel="stylesheet">
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
@@ -33,39 +36,38 @@
 <div th:replace="fragments :: menu"></div>
 
 <body>
-    <div class="container my-2">
+      <div class="container my-2">
     
         <div class="card">
             <div class="card-body">
-                <div th:switch="${hotels}" class="container my-5">
+                <div th:switch="${payments}" class="container my-5">
                     <p class="my-5">
-                        <a href="/hotelRegister" class="btn btn-secondary"><i
-       class="fas fa-user-plus ml-2">  Add Hotel </i></a>
+                        <a href="/paymentRegister" class="btn btn-secondary"><i
+       class="fas fa-user-plus ml-2">  Add Update </i></a>
                     </p>
                     <div class="col-md-10">
                      <div class="alert alert-warning" th:if="${successMessage}" ></div>
-                        <h2 th:case="null">No Hotel yet!</h2>
+                        <h2 th:case="null">No Update yet!</h2>
                         <div th:case="*">
                             <table class="table table-striped table-responsive-md">
                                 <thead>
                                     <tr>
-                                        <th>Hotel Name</th>
-                                        <th>Location</th>
-                                        <th>Type</th>
-                                        <th>Description</th>
+                                        <th>Room Charge</th>
+                                        <th>Payment Date</th>
+                                        <th>Credit Card No</th>
                                         
                                         <th colspan=2>Actions</th>
                                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr th:each="hotel : ${hotels}">  <!-- 1 -->
-                                        <td th:text="${hotel.hotelName}"></td>
-                                        <td th:text="${hotel.location}"></td>
-                                        <td th:text="${hotel.type}"></td>
-                                        <td th:text="${hotel.description}"></td>
+                                    <tr th:each="payment : ${payments}">  <!-- 1 -->
+                                        <td th:text="${payment.roomCharge}"></td>
+                                        <td th:text="${payment.paymentDate}"></td>
+                                        <td th:text="${payment.creditcardNo}"></td>
                                         
-                                        <td><a th:href="@{/updateHotels/{id}(id=${hotel.id})}" class="btn btn-secondary"><i class="fas fa-user-edit ml-2">Edit</i></a></td> 
-                                        <td><a th:href="@{/deleteHotels/{id}(id=${hotel.id})}" class="btn btn-secondary"><i class="fas fa-user-times ml-2">Delete</i></a></td> 
+                                        
+                                        <td><a th:href="@{/updatePayments/{id}(id=${payment.id})}" class="btn btn-secondary"><i class="fas fa-user-edit ml-2">Edit</i></a></td> 
+                                        <td><a th:href="@{/deletePayments/{id}(id=${payment.id})}" class="btn btn-secondary"><i class="fas fa-user-times ml-2">Delete</i></a></td> 
                                     </tr>
                                 </tbody>
                             </table>
@@ -75,7 +77,8 @@
                 </div>
             </div>
         </div>
-    </div>
-   </body>
-   <div th:replace="fragments :: pageFooter"></div>
+    </div>   
+</body>
+<div th:replace="fragments :: pageFooter"></div>   
+
 </html>

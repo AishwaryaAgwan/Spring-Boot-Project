@@ -52,7 +52,7 @@ public  class HotelServiceImpl implements HotelService{
 
 	@Override
 	public Hotel updateHotel(Hotel hotel, long id) {
-		Hotel hotel1 = new Hotel();
+		Hotel hotel1 = new Hotel(null, null, null, null);
 	 try {
 		   hotel = hotelRepository.findById(id).orElseThrow(
 				 ()-> 		 new ResourceNotFoundException("Hotel","Id",id));

@@ -25,50 +25,66 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   
+<script>if ( top !== self ) top.location.replace( self.location.href );// Hey, don't iframe my iframe!</script>
+  
+  
+  
+  
+  <script>
+            // "$(window).load(function() {"
+                $(function () {
+            
+                  // Slideshow 1
+                  $("#slider1").responsiveSlides({
+                    maxwidth: 1600,
+                    speed: 600
+                  });
+            });
+  </script>
 </head>
 
 <div th:replace="fragments :: menu"></div>
 
 <body>
 
-<div class="container" style=" width:1000px; height:600px;" >
+<div class="container" style="height:600px;">
 
-<h1 style="color:orange; margin-top:20px;">Add User Details</h1>
-<form th:action="@{/saveUser}" th:object="${user}" method="post" class="form needs-validation">
+<h1 style="color:orange; margin-top:20px;">Add Hotel Details</h1>
+
+<form th:action="@{/saveBooking}" th:object="${booking}" method="post" class="form needs-validation">
     <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input class="form-control" type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
-        <div  th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+        <label for="booking_date">Booking Date</label>
+        <input class="form-control" type="text" th:field="*{booking_date}" id="booking_date" placeholder="booking_date">
+        <div  th:if="${#fields.hasErrors('booking_date')}" th:errors="*{booking_date}"></div>
     </div>
     <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input class="form-control" type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
-        <div class="alert alert-warning" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
-    </div>
-    
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input class="form-control" type="text" th:field="*{email}" id="email" placeholder="Email">
-        <div class="alert alert-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+        <label for="booking_time">Booking Time</label>
+        <input class="form-control" type="text" th:field="*{booking_time}" id="booking_time" placeholder="booking_time">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('booking_time')}" th:errors="*{booking_time}"></div>
     </div>
     
     <div class="form-group">
-        <label for="contactNo">Contact No</label>
-        <input class="form-control" type="text" th:field="*{contactNo}" id="contactNo" placeholder="Contact No">
-        <div class="alert alert-warning" th:if="${#fields.hasErrors('contactNo')}" th:errors="*{contactNo}"></div>
+        <label for="num_adults">Number of Adults</label>
+        <input class="form-control" type="text" th:field="*{num_adults}" id="num_adults" placeholder="num_adults">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('num_adults')}" th:errors="*{num_adults}"></div>
     </div>
     
     <div class="form-group">
-        <label for="address">Address</label>
-        <input class="form-control" type="text" th:field="*{address}" id="address" placeholder="Address">
-        <div class="alert alert-warning" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>
+        <label for="num_childern">Number of Childern</label>
+        <input class="form-control" type="text" th:field="*{num_childern}" id="num_childern" placeholder="num_childern">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('num_childern')}" th:errors="*{num_childern}"></div>
     </div>
     
     
-    <input type="submit"  class="btn btn-secondary mb-3" value="Add User">
-    <a  th:href = "@{/getUsers}" class=" btn btn-secondary btn-md mb-3 "> User List</a>
+    
+   <input type="submit"  class="btn btn-secondary mb-3" value="Add Booking">
+   <a  th:href = "@{/getBookings}" class=" btn btn-secondary btn-md mb-3 ">Booking List</a>
+    <a  th:href = "@{/paymentRegister}" class=" btn btn-secondary btn-md mb-3 ">Add Payment</a>
 </form>
 </div>
+ 
+
+
 </body>
 <div th:replace="fragments :: pageFooter"></div>
 </html>

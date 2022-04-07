@@ -41,7 +41,7 @@
     </div>    
         
    <div class="nav" style="height:70px; width:100%; background-color:black; background-attachment: fixed;">
-    		<ul class="nav navbar-left" style="height:70px; width:70%;">
+    		<ul class="nav navbar-left" style="height:70px; width:80%;">
 	  <li class="active" style="float: left"><a th:href = "@{/}" class=" nav-link btn btn-md mb-3 " style=" display: block;
   color: orange;
   text-align: center;">Home</a></li>
@@ -54,13 +54,13 @@
   color: orange;
   text-align: center; ">User list</a></li>
   
-      <li class="nav-item" style="float: left;"><a  th:href = "@{/hotelRegister}" class=" nav-link btn btn-md mb-3" style=" display: block;
+      <li class="nav-item" style="float: left;"><a  th:href = "@{/bookingRegister}" class=" nav-link btn btn-md mb-3" style=" display: block;
   color: orange; 
-  text-align: center;" > Add Hotel </a></li>
+  text-align: center;" > Add Booking </a></li>
   
-      <li class="nav-item" style="float: left;"><a  th:href = "@{/getHotels}" class=" nav-link btn btn-md mb-3" style=" display: block;
+      <li class="nav-item" style="float: left;"><a  th:href = "@{/getBookings}" class=" nav-link btn btn-md mb-3" style=" display: block;
   color: orange;
-  text-align: center; ">Hotel list</a></li>
+  text-align: center; ">Booking list</a></li>
   
   <li class="nav-item" style="float: left;"><a th:href = "@{/getGallery}" class=" nav-link btn btn-md mb-3" style=" display: block;
   color: orange;
@@ -70,18 +70,23 @@
   color: orange;
   text-align: center; ">About</a></li>
   
+  <li class="nav-item" style="float: left;"><a th:href = "@{/getServices}" class=" nav-link btn btn-md mb-3" style=" display: block;
+  color: orange;
+  text-align: center; ">Services</a></li>
+  
+  <li class="nav-item" style="float: left;"><a  th:href = "@{/getContact}" class=" nav-link btn btn-md mb-3" style=" display: block;
+  color: orange;
+  text-align: center; ">Contact</a></li>
       
 </ul>
 
-<ul class="nav navbar-right" style="height:70px; width:30%;">
-       <li style="float: left;">
-      <form class="form-inline my-2 my-lg-0" style=" display: block; color: orange; text-align: center; ">
-      <input class="form-control mr-sm-2" type="search" placeholder="Looking for" aria-label="Search">
-      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
-      </form>
+<ul class="nav navbar-right" style="height:70px; width:20%;">
+       
+      <li class="!isAuthenticated()" style="margin-left:20px;">
+      <a th:href="@{/registration}" style=" display: block; color: orange; text-align: center;"><span class="glyphicon glyphicon-user"></span><button class="w3-button w3-black w3-round-large"> Sign Up</button></a>
       </li>
-        <li style="margin-left:40px;"><a href="#" th:href="@{/login}"  style=" display: block; color: orange; text-align: center;"><span class="glyphicon glyphicon-log-in"></span><button class="w3-button w3-black w3-round-large"><i class="fa fa-sign-in" style="font-size:20px">Login</i></button></a></li>
-        <li  style="margin-left:10px;"><a href="#" th:href="@{/logout}"  style=" display: block; color: orange; text-align: center;"><span class="glyphicon glyphicon-log-out"></span><button class="w3-button w3-black w3-round-large"><i class="fa fa-sign-out" style="font-size:20px">Logout</i></button></a></li>
+        <li style="margin-left:15px;"><a href="#" th:href="@{/login}"  style=" display: block; color: orange; text-align: center;"><span class="glyphicon glyphicon-log-in"></span><button class="w3-button w3-black w3-round-large"><i class="fa fa-sign-in" style="font-size:20px"></i>Login</button></a></li>
+        <li style="margin-left:15px;"><a href="#" th:href="@{/logout}"  style=" display: block; color: orange; text-align: center;"><span class="glyphicon glyphicon-log-out"></span><button class="w3-button w3-black w3-round-large"><i class="fa fa-sign-out" style="font-size:20px"></i>Logout</button></a></li>
 </ul>  
     
 </div>

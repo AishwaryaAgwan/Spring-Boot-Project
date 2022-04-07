@@ -37,35 +37,36 @@
     
         <div class="card">
             <div class="card-body">
-                <div th:switch="${hotels}" class="container my-5">
+                <div th:switch="${bookings}" class="container my-5">
                     <p class="my-5">
-                        <a href="/hotelRegister" class="btn btn-secondary"><i
-       class="fas fa-user-plus ml-2">  Add Hotel </i></a>
+                        <a href="/bookingRegister" class="btn btn-secondary"><i
+       class="fas fa-user-plus ml-2">  Add Booking </i></a>
                     </p>
                     <div class="col-md-10">
                      <div class="alert alert-warning" th:if="${successMessage}" ></div>
-                        <h2 th:case="null">No Hotel yet!</h2>
+                        <h2 th:case="null">No Booking yet!</h2>
                         <div th:case="*">
                             <table class="table table-striped table-responsive-md">
                                 <thead>
                                     <tr>
-                                        <th>Hotel Name</th>
-                                        <th>Location</th>
-                                        <th>Type</th>
-                                        <th>Description</th>
+                                        
+                                        <th>Booking Date</th>
+                                        <th>Booking Time</th>
+                                        <th>No. Of Adults</th>
+                                        <th>No. of Children</th>
                                         
                                         <th colspan=2>Actions</th>
                                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr th:each="hotel : ${hotels}">  <!-- 1 -->
-                                        <td th:text="${hotel.hotelName}"></td>
-                                        <td th:text="${hotel.location}"></td>
-                                        <td th:text="${hotel.type}"></td>
-                                        <td th:text="${hotel.description}"></td>
+                                    <tr th:each="booking" : ${bookings}">  <!-- 1 -->
+                                        <td th:text="${booking.bookingDate}"></td>
+                                        <td th:text="${booking.bookingTime}"></td>
+                                        <td th:text="${booking.numAdults}"></td>
+                                        <td th:text="${booking.numChildren}"></td>
                                         
-                                        <td><a th:href="@{/updateHotels/{id}(id=${hotel.id})}" class="btn btn-secondary"><i class="fas fa-user-edit ml-2">Edit</i></a></td> 
-                                        <td><a th:href="@{/deleteHotels/{id}(id=${hotel.id})}" class="btn btn-secondary"><i class="fas fa-user-times ml-2">Delete</i></a></td> 
+                                        <td><a th:href="@{/updateBookings/{id}(id=${Booking.id})}" class="btn btn-secondary"><i class="fas fa-user-edit ml-2">Edit</i></a></td> 
+                                        <td><a th:href="@{/deleteBookings/{id}(id=${Booking.id})}" class="btn btn-secondary"><i class="fas fa-user-times ml-2">Delete</i></a></td> 
                                     </tr>
                                 </tbody>
                             </table>

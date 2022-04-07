@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 import lombok.Data;
 
@@ -32,16 +34,26 @@ public class User {
 	@Column
 	private Long id;
 	
-	@Column(name="first_name")
+	@Column
+	@NotBlank(message="First Name can't be empty")
 	private String firstName;
-	@Column(name="last_name")
+	@Column
+	@NotBlank(message="Last Name can't be empty")
 	private String lastName;
-	@Column(name="email")
+	@Column
+	@NotBlank(message="Email can't be empty")
 	private String email;
 	//@Column(name="userName")
 	private String userName;
 	//@Column(name="password")
 	private String password;
+	
+	@Column
+	@NotBlank(message="Contact Number can't be empty")
+	private String contactNo;
+	@Column
+	private String address;
+	
 	private boolean active;
 	private String roles;
 	
@@ -110,6 +122,22 @@ public class User {
 		this.email = email;
 	}
 
+	public String getContactNo() {
+		return contactNo;
+	}
+
+	public void setContactNo(String contactNo) {
+		this.contactNo = contactNo;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	public int getCount() {
 		return count;
 	}
@@ -160,11 +188,30 @@ public class User {
 		this.roles = roles;
 	}
 
-	
+	public User(long id, @NotBlank(message = "First name can't be Empty") String firstName,
+			@NotBlank(message = "Last name can't be empty") String lastName,
+			@NotBlank(message = "Email can't be empty") @Email String email,
+			//@NotBlank(message = "Password can't be empty") String password,
+			@NotBlank(message = "Contact Number can't be empty") String contactNo, String address)
+			//List<Course> course)
+	{
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		//this.password = password;
+		this.contactNo = contactNo;
+		//this.address = address;
+		//this.course = course;
+	}
 
-	
-	
-	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", contactNo=" + contactNo + "]";
+	}
+
 	
 	
 	

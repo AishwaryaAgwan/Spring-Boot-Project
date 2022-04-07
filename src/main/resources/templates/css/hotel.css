@@ -5,6 +5,11 @@
 	list-style: none;
 	box-sizing:border-box;
 } 
+.mySlides 
+{
+	display:none;
+}
+
 .header
 {
 	height: 20px;

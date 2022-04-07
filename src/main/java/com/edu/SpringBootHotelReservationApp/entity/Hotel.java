@@ -20,7 +20,7 @@ import lombok.Data;
 public class Hotel{
 	
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	@Column
 	private Long id;
 	
@@ -37,6 +37,14 @@ public class Hotel{
 	@JsonBackReference
 	private List<User> user;
 	
+
+	public Hotel(String hotelName, String location, String type, String description) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Hotel() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Long getId() {
 		return id;

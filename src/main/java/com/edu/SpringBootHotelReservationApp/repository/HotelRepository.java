@@ -1,6 +1,7 @@
 package com.edu.SpringBootHotelReservationApp.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -14,4 +15,10 @@ public interface HotelRepository extends JpaRepository<Hotel,Long>{
 	List<Hotel> getHotelByHotelName(String hotelName);
 	
 	List<Hotel> getHotelByLocation(String location);
+
+	Hotel save(Hotel hotel);
+
+	//Hotel save();
+
+	Optional<Hotel> findBytype(String string);
 };
