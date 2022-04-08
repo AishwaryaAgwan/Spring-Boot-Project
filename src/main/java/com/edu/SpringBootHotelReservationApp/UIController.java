@@ -149,17 +149,17 @@ public String bookingRegistrationForm(Model model) {
     return "add-booking";
 }
 
-@PostMapping("/savebooking")
+@PostMapping("/saveBooking")
 public String addbooking(@Validated  Booking booking, Errors errors, Model model) {
 	if(null != errors && errors.getErrorCount() > 0)
 		return "add-booking";
 	else {
 	bookingService.saveBooking(booking);
-    model.addAttribute("successMessage", "Details are saved successfully");
+    model.addAttribute("success Message", "Details are saved successfully");
 	}
-    return "redirect:/getbookings";
+    return "redirect:/getBookings";
 }
-    @GetMapping("/getbookings")
+    @GetMapping("/getBookings")
     public String getAllBooking(Model model) {
     	
 		List<Booking> bookings =  bookingService.getAllBooking();
@@ -168,7 +168,22 @@ public String addbooking(@Validated  Booking booking, Errors errors, Model model
     	
         return "list-booking";
         }
-    
+    @GetMapping("/updateBookings/{id}")
+    public String updateBookings(@PathVariable(value="id") long id, Model model)
+    {
+  Booking booking=bookingService.getBookingById(id);
+    	model.addAttribute("booking",booking);
+    	return "update-booking";
+    }
+
+    @GetMapping("/deleteBookings/{id}")
+    public String deleteBookings(@PathVariable  long id, Model model)
+    {
+    	bookingService.deleteBooking(id);
+    	model.addAttribute("message", "User record deleted successfully");
+    	getAllBooking(model);
+    	return "list-booking";
+    }
   //payment
     @GetMapping("/paymentRegister")
     public String paymentRegistrationForm(Model model) {

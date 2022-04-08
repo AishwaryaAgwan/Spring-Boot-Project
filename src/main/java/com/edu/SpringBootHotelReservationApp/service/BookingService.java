@@ -14,6 +14,7 @@ public interface BookingService {
 	List<Booking> getBookingByBookingTime(String bookingTime);
 	List<Booking> getBookingByNumAdults(String numAdults);
 	List<Booking> getBookingByNumChildren(String numChildren);
+	void deleteBooking(long id);
 	
 
 

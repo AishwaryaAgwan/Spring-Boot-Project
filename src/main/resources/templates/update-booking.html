@@ -24,39 +24,49 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ 
   
+  <link th:href="@{/css/main.css}" rel="stylesheet">
+<link th:href="@{/js/main.js}" rel="stylesheet">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+ 
 </head>
 
 <div th:replace="fragments :: menu"></div>
 
 <body>
+  
+  
+<div class="container" style="height:1000px;">
+<h1  style="color:orange; margin-top:20px;">Update Booking Details</h1>
 
-<div class="container" style=" width:1000px; height:600px;" >
-
-<h1 style="color:orange; margin-top:20px;">Add User Details</h1>
-<form th:action="@{/savePayment}" th:object="${payment}" method="post" class="form needs-validation">
-    <div class="form-group">
-        <label for="roomCharge">Room Charge</label>
-        <input class="form-control" type="text" th:field="*{roomCharge}" id="roomCharge" placeholder="Room Charge">
-        <div  th:if="${#fields.hasErrors('roomCharge')}" th:errors="*{roomCharge}"></div>
+<form th:action="@{/saveBooking}" th:object="${booking}" method="post">
+     <div class="form-group">
+       <input type="hidden" th:field="*{id}"/>
+         <label for="bookingDate">Booking Date</label>
+        <input class="form-control" type="text" th:field="*{bookingDate}" id="bookingDate" >
+       
+    </div>
+     <div class="form-group">
+         <label for="bookingTime">Booking Time</label>
+        <input class="form-control" type="text" th:field="*{bookingTime}" id="bookingTime" >
+       
     </div>
     <div class="form-group">
-        <label for="paymentDate">Payment Date</label>
-        <input class="form-control" type="text" th:field="*{paymentDate}" id="paymentDate" placeholder="Payment Date">
-        <div class="alert alert-warning" th:if="${#fields.hasErrors('v')}" th:errors="*{paymentDate}"></div>
+        <label for="numAdults">Number Of Adults</label>
+        <input class="form-control" type="text" th:field="*{numAdults}" id="numAdults" >
+       
     </div>
-    
     <div class="form-group">
-        <label for="creditcardNo">Credit Card No</label>
-        <input class="form-control" type="text" th:field="*{creditcardNo}" id="creditcardNo" placeholder="Credit Card No">
-        <div class="alert alert-warning" th:if="${#fields.hasErrors('creditcardNo')}" th:errors="*{creditcardNo}"></div>
+        <label for="numChildren">Number Of Children</label>
+        <input class="form-control" type="text" th:field="*{numChildren}" id="numChildren" >
+       
     </div>
     
     
     
-    
-    <input type="submit"  class="btn btn-secondary mb-3" value="Add Payment">
-    <a  th:href = "@{/getPayments}" class=" btn btn-secondary btn-md mb-3 "> Payment List</a>
+    <input type="submit"  class="btn btn-secondary mb-3" value="Update Booking">
+    <a  th:href = "@{/getBookings}" class=" btn btn-secondary btn-md mb-3">Booking List</a><br><br>
 </form>
 </div>
 </body>

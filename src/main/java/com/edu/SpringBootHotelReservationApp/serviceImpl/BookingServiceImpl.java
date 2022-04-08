@@ -85,6 +85,13 @@ public class BookingServiceImpl  implements BookingService{
 		return bookingRepository.findBookingByNumChildren(numChildren);
 	}
 
+
+	@Override
+	public void deleteBooking(long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 /*
 	@Override
 	public List<Booking> getAllbooking(String booking) {

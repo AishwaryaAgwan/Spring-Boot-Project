@@ -24,6 +24,9 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+<script>if ( top !== self ) top.location.replace( self.location.href );// Hey, don't iframe my iframe!</script>
+  
   <link th:href="@{/css/main.css}" rel="stylesheet">
 <link th:href="@{/js/main.js}" rel="stylesheet">
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
@@ -33,14 +36,35 @@
 <div th:replace="fragments :: menu"></div>
 
 <body>
+<div class="content-box-left-bootomgrids" style="margin-top:30px;">
+                            <div class="content-box-left-bootomgrid">
+                                <h3>Deluxe Rooms</h3>
+                                <p> Your description about deluxe rooms</p>
+                                <a href="#"><img src="images/slider1.jpg" title="image-name" /></a>
+                            </div>
+                            <div class="content-box-left-bootomgrid">
+                                <h3>Luxury Rooms</h3>
+                                <p>Your description about Luxury rooms</p>
+                                <a href="#"><img src="images/slider2.jpg" title="image-name" /></a>
+                            </div>
+                            
+                            <div class="content-box-left-bootomgrid lastgrid">
+                                <h3>Executive Rooms</h3>
+                                <p>Your description about Executive rooms</p>
+                                <a href="#"><img src="images/slider3.jpg" title="image-name" /></a>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+
+
     <div class="container my-2">
     
         <div class="card">
             <div class="card-body">
                 <div th:switch="${bookings}" class="container my-5">
                     <p class="my-5">
-                        <a href="/bookingRegister" class="btn btn-secondary"><i
-       class="fas fa-user-plus ml-2">  Add Booking </i></a>
+                       
+                        <a href="/bookingRegister" class="btn btn-secondary"><i class="fas fa-user-plus ml-2">  Add Booking </i></a>
                     </p>
                     <div class="col-md-10">
                      <div class="alert alert-warning" th:if="${successMessage}" ></div>
@@ -59,14 +83,15 @@
                                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr th:each="booking" : ${bookings}">  <!-- 1 -->
+                                 
+                                    <tr th:each="booking : ${bookings}">  <!-- 1 -->
                                         <td th:text="${booking.bookingDate}"></td>
                                         <td th:text="${booking.bookingTime}"></td>
                                         <td th:text="${booking.numAdults}"></td>
                                         <td th:text="${booking.numChildren}"></td>
                                         
-                                        <td><a th:href="@{/updateBookings/{id}(id=${Booking.id})}" class="btn btn-secondary"><i class="fas fa-user-edit ml-2">Edit</i></a></td> 
-                                        <td><a th:href="@{/deleteBookings/{id}(id=${Booking.id})}" class="btn btn-secondary"><i class="fas fa-user-times ml-2">Delete</i></a></td> 
+                                        <td><a th:href="@{/updateBookings/{id}(id=${booking.id})}" class="btn btn-secondary"><i class="fas fa-user-edit ml-2">Edit</i></a></td> 
+                                        <td><a th:href="@{/deleteBookings/{id}(id=${booking.id})}" class="btn btn-secondary"><i class="fas fa-user-times ml-2">Delete</i></a></td> 
                                     </tr>
                                 </tbody>
                             </table>

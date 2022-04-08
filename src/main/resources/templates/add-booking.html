@@ -25,64 +25,110 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   
-<script>if ( top !== self ) top.location.replace( self.location.href );// Hey, don't iframe my iframe!</script>
-  
-  
-  
-  
-  <script>
-            // "$(window).load(function() {"
-                $(function () {
-            
-                  // Slideshow 1
-                  $("#slider1").responsiveSlides({
-                    maxwidth: 1600,
-                    speed: 600
-                  });
-            });
-  </script>
+
 </head>
 
 <div th:replace="fragments :: menu"></div>
 
 <body>
+<div class="content">
+                <div class="quit">
+                    <p><span class="start">Your </span> hotel's <span class="end">Motto .</span></p>
+                </div>
+                    <div class="content-grids">
+                        <div class="wrap">
+                        <div class="content-grid">
+                            <div class="content-grid-pic">
+                                <a href="#"><img src="Images/icon1.png" title="image-name" /></a>
+                            </div>
+                            <div class="content-grid-info">
+                                <h3>Best food Ever</h3>
+                                <p>"DESCRIPTION"</p>
+                                <a href="#">Read More</a>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+                        <div class="content-grid">
+                            <div class="content-grid-pic">
+                                <a href="#"><img src="Images/icon2.png" title="image-name" /></a>
+                            </div>
+                            <div class="content-grid-info">
+                                <h3>24x7 phone support</h3>
+                                <p>"DESCRIPTION"</p>
+                                <a href="#">Read More</a>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+                        <div class="content-grid">
+                            <div class="content-grid-pic">
+                                <a href="#"><img src="Images/iocn3.png" title="image-name" /></a>
+                            </div>
+                            <div class="content-grid-info">
+                                <h3>Best Room Services</h3>
+                                <p>"DESCRIPTION"</p>
+                                <a href="#">Read More</a>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+                        
+                        <div class="clear"> </div>
+                    </div>
+                </div>
+</div>
 
 <div class="container" style="height:600px;">
 
-<h1 style="color:orange; margin-top:20px;">Add Hotel Details</h1>
+<h1 style="color:orange; margin-top:20px;">Add Booking Details</h1>
 
 <form th:action="@{/saveBooking}" th:object="${booking}" method="post" class="form needs-validation">
     <div class="form-group">
-        <label for="booking_date">Booking Date</label>
-        <input class="form-control" type="text" th:field="*{booking_date}" id="booking_date" placeholder="booking_date">
-        <div  th:if="${#fields.hasErrors('booking_date')}" th:errors="*{booking_date}"></div>
+        <label for="bookingDate">Booking Date</label>
+        <input class="form-control" type="text" th:field="*{bookingDate}" id="bookingDate" placeholder="Booking Date">
+        <div  th:if="${#fields.hasErrors('bookingDate')}" th:errors="*{bookingDate}"></div>
     </div>
     <div class="form-group">
-        <label for="booking_time">Booking Time</label>
-        <input class="form-control" type="text" th:field="*{booking_time}" id="booking_time" placeholder="booking_time">
-        <div class="alert alert-warning" th:if="${#fields.hasErrors('booking_time')}" th:errors="*{booking_time}"></div>
+        <label for="bookingTime">Booking Time</label>
+        <input class="form-control" type="text" th:field="*{bookingTime}" id="bookingTime" placeholder="Booking Time">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('bookingTime')}" th:errors="*{bookingTime}"></div>
     </div>
     
     <div class="form-group">
-        <label for="num_adults">Number of Adults</label>
-        <input class="form-control" type="text" th:field="*{num_adults}" id="num_adults" placeholder="num_adults">
-        <div class="alert alert-warning" th:if="${#fields.hasErrors('num_adults')}" th:errors="*{num_adults}"></div>
+        <label for="numAdults">Number of Adults</label>
+        <input class="form-control" type="text" th:field="*{numAdults}" id="numAdults" placeholder="No Of Adults">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('numAdults')}" th:errors="*{numAdults}"></div>
     </div>
     
     <div class="form-group">
-        <label for="num_childern">Number of Childern</label>
-        <input class="form-control" type="text" th:field="*{num_childern}" id="num_childern" placeholder="num_childern">
-        <div class="alert alert-warning" th:if="${#fields.hasErrors('num_childern')}" th:errors="*{num_childern}"></div>
+        <label for="numChildern">Number of Children </label>
+        <input class="form-control" type="text" th:field="*{numChildren}" id="numChildren" placeholder="No Of Childern">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('numChildren')}" th:errors="*{numChildren}"></div>
     </div>
-    
     
     
    <input type="submit"  class="btn btn-secondary mb-3" value="Add Booking">
-   <a  th:href = "@{/getBookings}" class=" btn btn-secondary btn-md mb-3 ">Booking List</a>
-    <a  th:href = "@{/paymentRegister}" class=" btn btn-secondary btn-md mb-3 ">Add Payment</a>
+    <a  th:href = "@{/getBookings}" class=" btn btn-secondary btn-md mb-3 "> BookingList</a>
+    <a  th:href = "@{/bookingRegister}" class=" btn btn-secondary btn-md mb-3 ">Add Payment</a>
 </form>
 </div>
- 
+<div class="content-box-left-bootomgrids" style="margin-top:30px;">
+                            <div class="content-box-left-bootomgrid">
+                                <h3>Deluxe Rooms</h3>
+                                <p> Your description about deluxe rooms</p>
+                                <a href="#"><img src="images/slider1.jpg" title="image-name" /></a>
+                            </div>
+                            <div class="content-box-left-bootomgrid">
+                                <h3>Luxury Rooms</h3>
+                                <p>Your description about Luxury rooms</p>
+                                <a href="#"><img src="images/slider2.jpg" title="image-name" /></a>
+                            </div>
+                            
+                            <div class="content-box-left-bootomgrid lastgrid">
+                                <h3>Executive Rooms</h3>
+                                <p>Your description about Executive rooms</p>
+                                <a href="#"><img src="images/slider3.jpg" title="image-name" /></a>
+                            </div>
+                            <div class="clear"> </div>
+                        </div> 
 
 
 </body>

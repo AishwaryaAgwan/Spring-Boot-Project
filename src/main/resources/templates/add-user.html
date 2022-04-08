@@ -30,6 +30,51 @@
 <div th:replace="fragments :: menu"></div>
 
 <body>
+<div class="content">
+                <div class="quit">
+                    <p><span class="start">Your </span> hotel's <span class="end">Motto .</span></p>
+                </div>
+                    <div class="content-grids">
+                        <div class="wrap">
+                        <div class="content-grid">
+                            <div class="content-grid-pic">
+                                <a href="#"><img src="Images/icon1.png" title="image-name" /></a>
+                            </div>
+                            <div class="content-grid-info">
+                                <h3>Best food Ever</h3>
+                                <p>"DESCRIPTION"</p>
+                                <a href="#">Read More</a>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+                        <div class="content-grid">
+                            <div class="content-grid-pic">
+                                <a href="#"><img src="Images/icon2.png" title="image-name" /></a>
+                            </div>
+                            <div class="content-grid-info">
+                                <h3>24x7 phone support</h3>
+                                <p>"DESCRIPTION"</p>
+                                <a href="#">Read More</a>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+                        <div class="content-grid">
+                            <div class="content-grid-pic">
+                                <a href="#"><img src="Images/iocn3.png" title="image-name" /></a>
+                            </div>
+                            <div class="content-grid-info">
+                                <h3>Best Room Services</h3>
+                                <p>"DESCRIPTION"</p>
+                                <a href="#">Read More</a>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+                        
+                        <div class="clear"> </div>
+                    </div>
+                </div>
+</div>
+
 
 <div class="container" style=" width:1000px; height:600px;" >
 
@@ -69,6 +114,27 @@
     <a  th:href = "@{/getUsers}" class=" btn btn-secondary btn-md mb-3 "> User List</a>
 </form>
 </div>
+
+<div class="content-box-left-bootomgrids" style="margin-top:30px;">
+                            <div class="content-box-left-bootomgrid">
+                                <h3>Deluxe Rooms</h3>
+                                <p> Your description about deluxe rooms</p>
+                                <a href="#"><img src="images/slider1.jpg" title="image-name" /></a>
+                            </div>
+                            <div class="content-box-left-bootomgrid">
+                                <h3>Luxury Rooms</h3>
+                                <p>Your description about Luxury rooms</p>
+                                <a href="#"><img src="images/slider2.jpg" title="image-name" /></a>
+                            </div>
+                            
+                            <div class="content-box-left-bootomgrid lastgrid">
+                                <h3>Executive Rooms</h3>
+                                <p>Your description about Executive rooms</p>
+                                <a href="#"><img src="images/slider3.jpg" title="image-name" /></a>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+                        
 </body>
 <div th:replace="fragments :: pageFooter"></div>
 </html>

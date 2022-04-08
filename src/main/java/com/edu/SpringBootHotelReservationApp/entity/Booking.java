@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+//import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -25,18 +25,18 @@ public class Booking {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column
 	private long id;
-	@Column(name="booking_date")
+	@Column(name="bookingDate")
 	private String bookingDate;
-	@Column(name="booking_time")
+	@Column(name="bookingTime")
 	private String bookingTime;
-	@Column(name="num_adults")
+	@Column(name="numAdults")
 	private String numAdults;
-	@Column(name="num_childern")
+	@Column(name="numChildren")
 	private String numChildren;
 	
 	
 	@ManyToOne
-	@JoinTable(name="booking_user",joinColumns = { @JoinColumn(name = "hotel_id")},inverseJoinColumns = {@JoinColumn(name="user_id")})
+	@JoinTable(name="booking_user",joinColumns = { @JoinColumn(name = "booking_id")},inverseJoinColumns = {@JoinColumn(name="user_id")})
 	private Hotel hotelId;
 	
 	
@@ -89,6 +89,12 @@ public class Booking {
 		return hotelId;
 	}
 	public void setHotel(Hotel hotelId) {
+		this.hotelId = hotelId;
+	}
+	public Hotel getHotelId() {
+		return hotelId;
+	}
+	public void setHotelId(Hotel hotelId) {
 		this.hotelId = hotelId;
 	}
 	
